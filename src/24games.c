@@ -206,6 +206,7 @@ void brute_force(){
 }
 
 void input_random(){
+    srand(time(NULL));
     printf("Your random input is = ");
     while(input_data.length < 4){
         input_data.array[input_data.length] = (double)(rand()%13)+1;
@@ -272,6 +273,8 @@ void input_choice(){
     }
 }
 
+void output_choice();
+
 void progress_output(int choice){
     double total_time;
     total_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
@@ -298,6 +301,9 @@ void progress_output(int choice){
             }
             fprintf(file, "Elapsed time: %f seconds", total_time);
         }
+    }else{
+        printf("Your input is wrong, Please try again!\n");
+        output_choice();
     }
 }
 
@@ -314,12 +320,34 @@ void output_choice(){
     progress_output(choice_output);
 }
 
-void restart_choice(){
-    
+void home();
+
+void restart_choice();
+
+void restart_progress(char * restart){
+    if(strcmp(restart, "yes") == 0){
+        printf("\nOkay, let's have fun again!\n");
+        home();
+    }else if(strcmp(restart, "no") == 0){
+        printf("\nWe will wait you back, Bye ^^!\n");
+        exit(0);
+    }else{
+        printf("\nYour input is wrong, Please reinput!\n");
+        restart_choice();
+    }
 }
 
-int main(){
-    system("cls");
+void restart_choice(){
+    char restart[10];
+    printf(
+        "Please include yes or no!\n"
+        "Do you want to continue? "
+    );
+    scanf("%s", restart);
+    restart_progress(restart);
+}
+
+void home(){
     printf(
         "Welcome to 24 games!\n"
         "There is 2 option that you can choose,\n"
@@ -331,6 +359,11 @@ int main(){
     end_time= clock();
     output_choice();
     restart_choice();
+}
+
+int main(){
+    system("cls");
+    home();
     // for(int i= 0; i<input_data.length; i++){
     //     printf("%f\n", input_data.array[i]);
     // }
