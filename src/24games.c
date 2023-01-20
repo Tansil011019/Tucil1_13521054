@@ -208,7 +208,16 @@ void input_random(){
     printf("Your random input is = ");
     while(input_data.length < 4){
         input_data.array[input_data.length] = (double)(rand()%13)+1;
-        printf("%0.f ", input_data.array[input_data.length]);
+        if(input_data.array[input_data.length] == 13){
+            printf("K ");
+        }else if(input_data.array[input_data.length] == 12){
+            printf("Q ");
+        }
+        else if(input_data.array[input_data.length] == 11){
+            printf("J ");
+        }else{
+            printf("%0.f ", input_data.array[input_data.length]);
+        }
         input_data.length++;
     }
     printf("\n");
@@ -347,6 +356,16 @@ void restart_choice(){
 
 void home(){
     printf(
+"________    _____                                        \n"                            
+"\\_____  \\  /  |  |     _________    _____   ____   ______\n"
+" /  ____/ /   |  |_   / ___\\__  \\  /     \\_/ __ \\ /  ___/\n"
+"/       \\/    ^   /  / /_/  > __ \\|  Y Y  \\  ___/ \\___ \\ \n"
+"\\_______ \\____   |   \\___  (____  /__|_|  /\\___  >____  >\n"
+"        \\/    |__|  /_____/     \\/      \\/     \\/     \\/ \n"
+" _______   _______   _______   _______\n"
+"|       | |       | |       | |       |\n"
+"|   A   | |   2   | |   3   | |   4   |\n"
+"|_______| |_______| |_______| |_______|\n"
         "Welcome to 24 games!\n"
         "There is 2 option that you can choose,\n"
         "You can either choose random or input yourself\n"
