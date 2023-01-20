@@ -2,8 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-// #include "adt/boolean.h"
-// #include "adt/wordmachine.h"
 
 #define boolean unsigned char
 #define true 1
