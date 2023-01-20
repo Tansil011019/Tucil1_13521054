@@ -26,7 +26,7 @@ run.bat
 ```shell
 cd bin
 ```
-3. Jalankan perintah berikut:
+2. Jalankan perintah berikut:
 ```shell
 ./out
 ```
