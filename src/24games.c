@@ -248,7 +248,7 @@ void read_input(){
         input_data.array[input_data.length] = temp;
         input_data.length++;
     }
-    fgets(input, 1000, stdin);
+    fgets(input, 10000, stdin);
 }
 
 void input_user(){
