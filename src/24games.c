@@ -248,9 +248,7 @@ void read_input(){
         input_data.array[input_data.length] = temp;
         input_data.length++;
     }
-    // for(int i= 0; i<input_data.length; i++){
-    //     printf("%f\n", input_data.array[i]);
-    // }
+    fgets(input, 1000, stdin);
 }
 
 void input_user(){
